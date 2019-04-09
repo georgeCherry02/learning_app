@@ -10,10 +10,6 @@ const style = {
   border: '1px solid #ddd'
 };
 
-const hStyle = {
-  margin: 0
-}
-
 export class Button extends React.Component {
 	constructor(props) {
 		super(props);
@@ -59,7 +55,6 @@ export class Button extends React.Component {
 			onClick={this.handleClick}
 			style={nStyle}>
 			  <h1 
-			    style={hStyle}
 			    id={dest}>
 			    {msg}
 		          </h1>

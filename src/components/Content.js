@@ -1,5 +1,7 @@
 import React from 'react';
 import {Home} from './Home';
+import {Learn} from './Learn';
+import {Create} from './Create';
 
 export class Content extends React.Component {
 	constructor(props) {
@@ -21,9 +23,9 @@ export class Content extends React.Component {
 			case "home":
 				return <Home opt={this.goTo}/>;
 			case "create":
-				break;
+				return <Learn />;
 			case "learn":
-				break;
+				return <Create />;
 			default:
 				this.setState({
 				  dest: "home"

@@ -10,7 +10,6 @@ const style = {
 }
 
 const hStyle = {
-  margin: 0,
   marginLeft: 20
 }
 
