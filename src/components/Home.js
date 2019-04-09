@@ -11,24 +11,11 @@ const style = {
 }
 
 export class Home extends React.Component {
-	constructor(props) {
-		super(props);
-		this.create = this.create.bind(this);
-		this.learn = this.learn.bind(this);
-	}
-
-	create() {
-		alert('Create!');
-	}
-	learn() {
-		alert('Learn!');
-	}
-
 	render() {
 		return (
 		  <div style={style}>
-		    <Button handleClick={this.learn} msg={"Learn!"}/>
-		    <Button handleClick={this.create} msg={"Create!"}/>
+		    <Button handleClick={this.props.opt} type={true}/>
+		    <Button handleClick={this.props.opt} type={false}/>
 		  </div>
 		);
 	}

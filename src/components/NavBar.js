@@ -5,8 +5,8 @@ const style = {
   width: '100%',
   height: 49,
   lineHeight: '49px',
-  background: '#ccc',
-  borderBottom: '1px solid #eee'
+  background: '#ddd',
+  borderBottom: '1px solid #ccc'
 }
 
 const hStyle = {

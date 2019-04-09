@@ -22,6 +22,7 @@ export class Button extends React.Component {
 		}
 		this.handleMouseEnter = this.handleMouseEnter.bind(this);
 		this.handleMouseLeave = this.handleMouseLeave.bind(this);
+		this.handleClick = this.handleClick.bind(this);
 	}
 
 	handleMouseEnter() {
@@ -34,18 +35,34 @@ export class Button extends React.Component {
 		  highlight: false 
 		});
 	}
+	handleClick(e) {
+		this.props.handleClick(e.target.id);
+	}
 
 	render() {
 		var backgroundCol = {
-		  background: this.state.highlight ? '#ddd' : '#eee'
+		  background: this.state.highlight ? '#eee' : '#ddd'
 		}
 		var nStyle = {...style, ...backgroundCol};
+		var msg;
+		var dest;
+		if (this.props.type) {
+			msg = 'Learn!';
+			dest = 'learn';
+		} else {
+			msg = 'Create!';
+			dest = 'create';
+		}
 		return <div 
 			onMouseEnter={this.handleMouseEnter}
 			onMouseLeave={this.handleMouseLeave}
-			onClick={this.props.handleClick}
-			style={nStyle}><h1 style={hStyle}>
-			{this.props.msg}
-		       </h1></div>;
+			onClick={this.handleClick}
+			style={nStyle}>
+			  <h1 
+			    style={hStyle}
+			    id={dest}>
+			    {msg}
+		          </h1>
+			</div>;
 	}
 }
